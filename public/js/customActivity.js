@@ -84,9 +84,9 @@ define(["postmonger"], function (Postmonger) {
     var selectEntryObject;
     var hasInArguments = Boolean(
       payload["arguments"] &&
-        payload["arguments"].execute &&
-        payload["arguments"].execute.inArguments &&
-        payload["arguments"].execute.inArguments.length > 0
+      payload["arguments"].execute &&
+      payload["arguments"].execute.inArguments &&
+      payload["arguments"].execute.inArguments.length > 0
     );
 
     var inArguments = hasInArguments
@@ -145,7 +145,7 @@ define(["postmonger"], function (Postmonger) {
     var personContactId
     var accountId;
     var firstName;
-    var lastName;   
+    var lastName;
     var opportunityId;
     var stageName;
     var courseOfStudyLookup;
@@ -174,14 +174,14 @@ define(["postmonger"], function (Postmonger) {
 
     if (entryTitle == "Data Extension") {
       entryObject = "DE";
-    }   
+    }
 
     switch (selectEntryObject) {
       case "Opportunity":
         accountId = "Opportunity:Account:Id";
         personContactId = "Opportunity:Account:PersonContactId";
         firstName = "Opportunity:Account:FirstName";
-        lastName = "Opportunity:Account:LastName";        
+        lastName = "Opportunity:Account:LastName";
         opportunityId = "Opportunity:Id";
         stageName = "Opportunity:StageName";
         courseOfStudyLookup = "Opportunity:CourseOfStudyLookup__c";
@@ -199,7 +199,7 @@ define(["postmonger"], function (Postmonger) {
         personEmail = "Opportunity:Account:PersonEmail";
         country = "Opportunity:Account:ShippingCountry";
         voucher = "Opportunity:VoucherID__c";
-        englishLevel = "Opportunity:EnglishLevel__c";       
+        englishLevel = "Opportunity:EnglishLevel__c";
         workExperience = "Opportunity:WorkExperience__c";
         budget = "Opportunity:BudgetPerMonth__c";
         rate = "Opportunity:RatePerInterval__c";
@@ -213,12 +213,12 @@ define(["postmonger"], function (Postmonger) {
       case "DE":
         accountId = "Account ID";
         personContactId = "PersonContactID";
-        firstName = "First Name";
-        lastName = "Last Name";
+        firstName = "firstName";
+        lastName = "lastName";
         opportunityId = "Opportunity ID";
         stageName = "Stage";
         courseOfStudyLookup = "Course Of Study Lookup";
-        isPrimary = "Is Primary";        
+        isPrimary = "Is Primary";
         programFamily = "Program Family";
         cpAccountId = "CP Account ID"
         salutation = "Salutation";
@@ -245,7 +245,7 @@ define(["postmonger"], function (Postmonger) {
         accountId = "OpportunityArchive__c:Account__r:Id";
         personContactId = "OpportunityArchive__c:Account:PersonContactId";
         firstName = "OpportunityArchive__c:Account__r:FirstName";
-        lastName = "OpportunityArchive__c:Account__r:LastName";        
+        lastName = "OpportunityArchive__c:Account__r:LastName";
         opportunityId = "OpportunityArchive__c:Opportunity__r:Id";
         stageName = "OpportunityArchive__c:StageName__c";
         courseOfStudyLookup = "OpportunityArchive__c:CourseOfStudyLookup__c";
@@ -263,7 +263,7 @@ define(["postmonger"], function (Postmonger) {
         personEmail = "OpportunityArchive__c:Account__r:PersonEmail";
         country = "OpportunityArchive__c:Account__r:ShippingCountry";
         voucher = "OpportunityArchive__c:VoucherID__c";
-        englishLevel = "OpportunityArchive__c:EnglishLevel__c";  
+        englishLevel = "OpportunityArchive__c:EnglishLevel__c";
         workExperience = "OpportunityArchive__c:WorkExperience__c";
         budget = "OpportunityArchive__c:BudgetPerMonth__c";
         rate = "OpportunityArchive__c:RatePerInterval__c";
@@ -282,13 +282,13 @@ define(["postmonger"], function (Postmonger) {
       { contentJSON: contentJSON, },
       { emailAddress: "{{InteractionDefaults.Email}}", },
       { EntryObject: entryObject, },
-      { personContactId: "{{Event." + eventDefinitionKey + '."' + personContactId + '"}}', }, 
-      { firstName: "{{Event." + eventDefinitionKey + '."' + firstName + '"}}', },      
+      { personContactId: "{{Event." + eventDefinitionKey + '."' + personContactId + '"}}', },
+      { firstName: "{{Event." + eventDefinitionKey + '."' + firstName + '"}}', },
       { lastName: "{{Event." + eventDefinitionKey + '."' + lastName + '"}}' },
       { opportunityId: "{{Event." + eventDefinitionKey + '."' + opportunityId + '"}}', },
       { stageName: "{{Event." + eventDefinitionKey + '."' + stageName + '"}}' },
       { courseOfStudyLookup: "{{Event." + eventDefinitionKey + '."' + courseOfStudyLookup + '"}}' },
-      { isPrimary: "{{Event." + eventDefinitionKey + '."' + isPrimary + '"}}' },      
+      { isPrimary: "{{Event." + eventDefinitionKey + '."' + isPrimary + '"}}' },
       { programFamily: "{{Event." + eventDefinitionKey + '."' + programFamily + '"}}', },
       { cpAccountId: "{{Event." + eventDefinitionKey + '."' + cpAccountId + '"}}', },
       { salutation: "{{Event." + eventDefinitionKey + '."' + salutation + '"}}', },
